@@ -35,12 +35,9 @@ var addNote = (title, body) => {
     };
 
     // 1- check notes-data.json file already available or not
-
-
-
     // check title already exist in notes using filter function
 
-    var duplicatenotes = notes.filter((note) => note.title == title);
+    var duplicatenotes = notes.filter((note) => note.title === title);
 
     // Push new note if new note not exist in notes-data.json
 
@@ -78,10 +75,23 @@ var removeNote = (title) => {
 
 var readNote = (title) => {
     console.log(`Read ${title}`);
+   var notes = fetchnote();
+  var readfilter = notes.filter((note)=>note.title === title);
+
+  console.log(readfilter);
+  return readfilter[0];
+}
+
+var logNote = (note) => {
+    console.log('Here Showing Notes');
+    console.log('---------------');
+    console.log(`Title: ${note.title}`);
+    console.log(`Body: ${note.body}`);
 }
 module.exports = {
     addNote,
     listNotes,
     removeNote,
-    readNote
+    readNote,
+    logNote
 };

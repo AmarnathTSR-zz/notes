@@ -15,10 +15,7 @@ console.log(`Command : ${command}`);
 if (command == 'add') {
     var note = notes.addNote(argv.title, argv.body);
     if (note) {
-        console.log('Notes Save success');
-        console.log('---------------');
-        console.log(`Title: ${note.title}`);
-        console.log(`Body: ${note.body}`);
+        notes.logNote(note);
     } else {
         console.log('Note title already exist. please enter the new title');
     }
@@ -34,7 +31,13 @@ if (command == 'add') {
     }
 
 } else if (command == 'read') {
-    notes.readNote(argv.title);
+    var note = notes.readNote(argv.title);
+    if (note) {
+      notes.logNote(note);
+    } else {
+        console.log('Note Not available');
+    }
+
 } else {
     console.log('Command Not recognised');
 };
