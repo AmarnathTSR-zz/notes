@@ -20,7 +20,11 @@ if (command == 'add') {
         console.log('Note title already exist. please enter the new title');
     }
 } else if (command == 'list') {
-    notes.listNotes();
+    var readNotes = notes.listNotes();
+    console.log(`No of ${readNotes.length} Note(s)`);
+    readNotes.forEach((note) => {
+        notes.logNote(note);
+    });
 } else if (command == 'remove') {
     removeresult = notes.removeNote(argv.title);
 
@@ -33,7 +37,7 @@ if (command == 'add') {
 } else if (command == 'read') {
     var note = notes.readNote(argv.title);
     if (note) {
-      notes.logNote(note);
+        notes.logNote(note);
     } else {
         console.log('Note Not available');
     }

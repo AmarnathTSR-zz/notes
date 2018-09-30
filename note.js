@@ -54,6 +54,8 @@ var addNote = (title, body) => {
 var listNotes = () => {
     console.log('List of Post');
 
+    return fetchnote();
+
 };
 
 var removeNote = (title) => {
@@ -75,11 +77,11 @@ var removeNote = (title) => {
 
 var readNote = (title) => {
     console.log(`Read ${title}`);
-   var notes = fetchnote();
-  var readfilter = notes.filter((note)=>note.title === title);
+    var notes = fetchnote();
+    var readfilter = notes.filter((note) => note.title === title);
 
-  console.log(readfilter);
-  return readfilter[0];
+    console.log(readfilter);
+    return readfilter[0];
 }
 
 var logNote = (note) => {
