@@ -21,7 +21,7 @@ var fetchnote = () =>
 }
 
 
-var savenotes =()=>{
+var savenotes =(notes)=>{
     fs.writeFileSync('notes-data.json', JSON.stringify(notes));
 }
 
@@ -65,7 +65,20 @@ console.log('List of Post');
 };
 
 var removeNote = (title) => {
-    console.log(`Removed : ${title}`);
+
+    //Fetching all notes
+    var notes = fetchnote();
+
+    // filter the notes which is not equals to given title (!==) in this case we got array value without given title
+    filterednotes = notes.filter((note) => note.title !== title);
+    
+    console.log(filterednotes);
+
+    savenotes(filterednotes);
+
+   return notes.length !== filterednotes.length;
+
+
 }
 
 var readNote = (title) => {

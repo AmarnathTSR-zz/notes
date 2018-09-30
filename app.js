@@ -29,7 +29,15 @@ else if(command == 'list'){
   notes.listNotes();
 }
 else if(command == 'remove'){
-notes.removeNote(argv.title);
+removeresult = notes.removeNote(argv.title);
+
+if(removeresult){
+    console.log('Notes have been succesfully removed');
+}
+else{
+    console.log('Notes Not found');
+}
+
 }
 else if(command == 'read'){
     notes.readNote(argv.title);
