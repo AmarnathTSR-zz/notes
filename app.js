@@ -13,7 +13,17 @@ var command = argv._[0];
 
 console.log(`Command : ${command}`);
 if(command == 'add'){
-    notes.addNote(argv.title, argv.body);
+  var note =  notes.addNote(argv.title, argv.body);
+  if(note){
+   console.log('Notes Save success');
+   console.log('---------------');
+   console.log(`Title: ${note.title}`);
+   console.log(`Body: ${note.body}`);
+  }
+  else
+  {
+  console.log('Note title already exist. please enter the new title');
+  }
 }
 else if(command == 'list'){
   notes.listNotes();
