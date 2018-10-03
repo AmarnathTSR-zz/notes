@@ -1,6 +1,5 @@
 const fs = require('fs');
 
-console.log('Starting note.js');
 
 // Adding Notes  
 //  1- check notes-data.json file already available or not
