@@ -65,8 +65,6 @@ var removeNote = (title) => {
     // filter the notes which is not equals to given title (!==) in this case we got array value without given title
     filterednotes = notes.filter((note) => note.title !== title);
 
-    console.log(filterednotes);
-
     savenotes(filterednotes);
 
     return notes.length !== filterednotes.length;
