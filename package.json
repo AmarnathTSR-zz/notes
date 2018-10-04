@@ -1,5 +1,5 @@
 {
-  "name": "notes",
+  "name": "amarnath-cli-notes",
   "version": "1.0.0",
   "description": "note application",
   "main": "app.js",
@@ -13,5 +13,19 @@
     "request": "^2.88.0",
     "yargs": "^12.0.2"
   },
-  "devDependencies": {}
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AmarnathTSR/notes.git"
+  },
+  "keywords": [
+    "cli",
+    "notes",
+    "cli-notes",
+    "nodejs"
+  ],
+  "bugs": {
+    "url": "https://github.com/AmarnathTSR/notes/issues"
+  },
+  "homepage": "https://github.com/AmarnathTSR/notes#readme"
 }
